@@ -112,6 +112,7 @@ namespace Prueba_Desarrollo_CNT
             float priority = 0;
             float yearsSmoking_float = (float)yearsSmoking;
             float age_float = (float)age;
+            float risk = 0;
 
             //CALCULAMOS LA PRIORIDAD PARA LOS NIÑOS
             if (age >= 1 && age <= 5)
@@ -149,16 +150,26 @@ namespace Prueba_Desarrollo_CNT
             {
                 if (lblDiet == "SI" && age >= 60 && age <= 100)
                 {
-                    priority = age_float / 20 + 4;
+                    priority = (age_float / 20) + 4;
                 }
                 else if (lblDiet == "NO")
                 {
-                    priority = age_float / 30 + 3;
+                    priority = (age_float / 30) + 3;
                 }
                 else if (age >= 41 && age_float <= 59)
                 {
                     priority = 0;
                 }
+            }
+
+            //CALCULAMOS RIESGO PARA NIÑOS Y JOVENES
+            if (age >= 1 && age <= 40)
+            {
+                risk = (age * priority) / 100;
+            }
+            else
+            {
+                risk = (age * priority) / 100 + (float)5.3;
             }
 
             try
@@ -186,7 +197,8 @@ namespace Prueba_Desarrollo_CNT
                     cmd.Parameters.Add("@hw_relationship", SqlDbType.TinyInt).Value = lblHWRelation;
                     cmd.Parameters.Add("@Users_status_idUsers", SqlDbType.Int).Value = User_status;
                     cmd.Parameters.Add("@priority", SqlDbType.Float).Value = priority;
-                        
+                    cmd.Parameters.Add("@risk", SqlDbType.Float).Value = risk;
+
                     cmd.ExecuteNonQuery();
 
                 }
