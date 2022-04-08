@@ -15,22 +15,6 @@ namespace Prueba_Desarrollo_CNT
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            if(!IsPostBack)
-            {
-                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connectDBSQL"].ConnectionString))
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "procedure_getUsers";
-                    cmd.Connection = con;
-                    con.Open();
-                    gvdAlumnos.DataSource = cmd.ExecuteReader();
-                    gvdAlumnos.DataBind();
-                }
-            }
-            */
-
             if (!IsPostBack)
             {
                 //LISTA DE TIPOS DE DOCUMENTOS DE IDENTIDAD
