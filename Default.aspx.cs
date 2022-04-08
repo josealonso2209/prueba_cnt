@@ -94,17 +94,76 @@ namespace Prueba_Desarrollo_CNT
             string number = txtNumberId.Text;
             string names = txtNames.Text;
             string surnames = txtSurnames.Text;
-            string age = txtAge.Text;
+            int age = Int32.Parse(txtAge.Text);
             string address = txtAddress.Text;
             string lblGender = Gender.SelectedValue.ToString();
-            string weight = txtWeight.Text;
-            string height = txtHeight.Text;
+            float weight = Int32.Parse(txtWeight.Text);
+            float height = Int32.Parse(txtHeight.Text);
+            //string weight = txtWeight.Text;
+            //string height = txtHeight.Text;
             string lblIsSmoker = IsSmoker.SelectedValue.ToString();
-            string yearsSmoking = txtYearsSmoking.Text;
+            int yearsSmoking = Int32.Parse(txtYearsSmoking.Text);
             string lblDiet = Diet.SelectedValue.ToString();
-            string lblHWRelation = HWRelation.SelectedValue.ToString();
+            int lblHWRelation = Int32.Parse(HWRelation.SelectedValue.ToString());
             int status  = 2;
             string User_status = status.ToString();
+
+            int risk = 0;
+            
+            //CALCULAMOS LA PRIORIDAD PARA LOS NIÑOS
+            if (age >= 1 && age <= 5)
+            {
+                risk = lblHWRelation + 3;
+
+            }else if (age >= 6 && age <= 12)
+            {
+                risk =lblHWRelation + 2;
+
+            } else if (age >= 13 && age <= 15)
+            {
+                risk = lblHWRelation + 1;
+
+            }
+
+            //CALCULAMOS LA PRIORIDAD PARA LOS JOVENES
+            if (age >= 16 && age <= 40)
+            {
+                if(lblIsSmoker == "SI")
+                {
+                    risk = yearsSmoking + 4 / 2;
+                }
+                else
+                {
+                    risk = 2;
+                }
+            }
+
+            //CALCULAMOS LA PRIORIDAD PARA LOS ADULTOS
+            if (age >= 1 && age <= 5)
+            {
+                risk = lblHWRelation + 3;
+
+            }
+            else if (age >= 6 && age <= 12)
+            {
+                risk = lblHWRelation + 2;
+
+            }
+            else if (age >= 41)
+            {
+                if (lblDiet == "SI" && age >= 60 && age <= 100)
+                {
+                    risk = age / 20 + 4;
+                }
+                else if (lblDiet == "NO")
+                {
+                    risk = age / 30 + 3;
+                }
+                else if (age >= 41 && age <= 59)
+                {
+                    risk = 0;
+                }
+            }
 
             try
             {
