@@ -108,20 +108,23 @@ namespace Prueba_Desarrollo_CNT
             int status  = 2;
             string User_status = status.ToString();
 
-            int risk = 0;
-            
+            //DEFINIMOS VARIABLES PARA REALIZAR OPERACIONES FLOTANTES
+            float priority = 0;
+            float yearsSmoking_float = (float)yearsSmoking;
+            float age_float = (float)age;
+
             //CALCULAMOS LA PRIORIDAD PARA LOS NIÑOS
             if (age >= 1 && age <= 5)
             {
-                risk = lblHWRelation + 3;
+                priority = lblHWRelation + 3;
 
             }else if (age >= 6 && age <= 12)
             {
-                risk =lblHWRelation + 2;
+                priority = lblHWRelation + 2;
 
             } else if (age >= 13 && age <= 15)
             {
-                risk = lblHWRelation + 1;
+                priority = lblHWRelation + 1;
 
             }
 
@@ -130,38 +133,31 @@ namespace Prueba_Desarrollo_CNT
             {
                 if(lblIsSmoker == "SI")
                 {
-                    risk = yearsSmoking + 4 / 2;
+                    //string script = string.Format(@"<script type='text/javascript'> alert('ES FUMADOR {0} '); </ script >", IsSmoker);
+                    //ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, false);
+
+                    priority = (yearsSmoking_float / 4) + 2;
                 }
                 else
                 {
-                    risk = 2;
+                    priority = 2;
                 }
             }
 
             //CALCULAMOS LA PRIORIDAD PARA LOS ADULTOS
-            if (age >= 1 && age <= 5)
-            {
-                risk = lblHWRelation + 3;
-
-            }
-            else if (age >= 6 && age <= 12)
-            {
-                risk = lblHWRelation + 2;
-
-            }
-            else if (age >= 41)
+            if (age >= 41)
             {
                 if (lblDiet == "SI" && age >= 60 && age <= 100)
                 {
-                    risk = age / 20 + 4;
+                    priority = age_float / 20 + 4;
                 }
                 else if (lblDiet == "NO")
                 {
-                    risk = age / 30 + 3;
+                    priority = age_float / 30 + 3;
                 }
-                else if (age >= 41 && age <= 59)
+                else if (age >= 41 && age_float <= 59)
                 {
-                    risk = 0;
+                    priority = 0;
                 }
             }
 
@@ -189,6 +185,7 @@ namespace Prueba_Desarrollo_CNT
                     cmd.Parameters.Add("@diet", SqlDbType.VarChar).Value = lblDiet;
                     cmd.Parameters.Add("@hw_relationship", SqlDbType.TinyInt).Value = lblHWRelation;
                     cmd.Parameters.Add("@Users_status_idUsers", SqlDbType.Int).Value = User_status;
+                    cmd.Parameters.Add("@priority", SqlDbType.Float).Value = priority;
                         
                     cmd.ExecuteNonQuery();
 
