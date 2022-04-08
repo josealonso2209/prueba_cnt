@@ -180,6 +180,11 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="reports.aspx" />
+    <Content Include="reports2.aspx" />
+    <Content Include="reports3.aspx" />
+    <Content Include="reports4.aspx" />
+    <Content Include="reports5.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -347,6 +352,41 @@
     </Compile>
     <Compile Include="Models\ConnectionDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reports.aspx.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports.aspx.designer.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports2.aspx.cs">
+      <DependentUpon>reports2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports2.aspx.designer.cs">
+      <DependentUpon>reports2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports3.aspx.cs">
+      <DependentUpon>reports3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports3.aspx.designer.cs">
+      <DependentUpon>reports3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports4.aspx.cs">
+      <DependentUpon>reports4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports4.aspx.designer.cs">
+      <DependentUpon>reports4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports5.aspx.cs">
+      <DependentUpon>reports5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports5.aspx.designer.cs">
+      <DependentUpon>reports5.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
