@@ -19,7 +19,8 @@ Ejecutar git clone desde cualquier Terminal compatible con sistema control de ve
 ## 2. 
 En la Ruta raiz del proyecto debe buscar el archivo backup_prueba_cnt, el cual es en BackUp de la Base de datos prueba_cnt, debe restaurarse en el Motor de Base de Datos SQL Server o uno compatible con dichas copias de seguridad.
 
-## 3. Proceder a ejecutar el archivo Default.aspx ubicado en la Raiz del proyecto desde Visual Studio.
+## 3.
+Proceder a ejecutar el archivo Default.aspx ubicado en la Raiz del proyecto desde Visual Studio.
 
 
 
