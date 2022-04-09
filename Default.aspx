@@ -111,7 +111,7 @@
             </div>
             <div class="card-footer">
                 <div class="float-right">
-                    <asp:Button ID="Button1" runat="server" class="btn btn-success" Text="Click" OnClick="BtnSubmit_Click" />
+                    <asp:Button ID="Button1" runat="server" class="btn btn-success" Text="Guardar" OnClick="BtnSubmit_Click" />
                     <asp:Button ID="Button2" runat="server" type="submit" class="btn btn-danger" Text="Cancelar" />
                 </div>
             </div>
