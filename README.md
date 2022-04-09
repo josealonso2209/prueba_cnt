@@ -1,7 +1,7 @@
 # Proyecto Prueba Desarrollo CNT
 <div align="center">
     <a href="">
-        <img src="assets/reto.svg" alt="Prueba Desarrollo CNT" width="800px" />
+        <img src="/assets/src/reto.svg" alt="Prueba Desarrollo CNT" width="800px" />
     </a>
 </div>
 
